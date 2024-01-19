@@ -7,3 +7,7 @@
 .navbar-toggler{
     border: none;
 }
+nav{
+    background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhPVO22DktWo0b1qc_KicqMiMH00bh8Jx9oQ&usqp=CAU");
+    background-position: center;
+}

@@ -1,11 +1,13 @@
 let linkAPI = "http://localhost/github/ApiCarros/api/v1/cars"
 export function submit(dados){
-    fetch("http://localhost/github/ApiCarros/api/v1/cars", {
-        method: 'GET',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json'
-          }
+    fetch(linkAPI, {
+        method: 'POST',
+        headers:{
+            "Content-Type": "application/json",
+            'email':'admin@email.com',
+            'senha':'admin'
+        },
+        body:JSON.stringify(dados)
       })
         .then(resposta => resposta.json())
         .then(dadosAPI => {

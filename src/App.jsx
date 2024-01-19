@@ -3,6 +3,7 @@ import Home from './pages/home'
 import AdicionarVeiculo from './pages/addVeiculo'
 import CosultarVeiculo from './pages/consultarVeiculo'
 import Error404 from './pages/error404'
+import Documentacao from './pages/documentacao'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/adicionar" element={<AdicionarVeiculo/>} />
           <Route path="/consulta" element={<CosultarVeiculo/>} />
+          <Route path="/documentacao" element={<Documentacao/>} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>

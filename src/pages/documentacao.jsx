@@ -1,13 +1,14 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
-function Home() {
+
+function documentacao() {
   return (
     <>
       <Header/>
-        <h1>Home</h1>
+        <h1>Documentação</h1>
       <Footer/>
     </>
   )
 }
 
-export default Home
+export default documentacao

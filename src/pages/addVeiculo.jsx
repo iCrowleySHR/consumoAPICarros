@@ -1,4 +1,5 @@
 import Header from '../components/header'
+import Footer from '../components/footer'
 import '../styles/addVeiculo.css'
 import {submit} from '../utils/addVeiculo'
 import { useState } from 'react';
@@ -263,6 +264,7 @@ function addVeiculo() {
                     <button type='submit' className='btn btn-primary btn-lg my-2'>Enviar dados</button>
                 </form>
             </main>
+        <Footer/>
         </>
     )
 }
