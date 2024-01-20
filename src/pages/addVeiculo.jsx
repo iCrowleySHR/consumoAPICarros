@@ -1,31 +1,40 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
 import '../styles/addVeiculo.css'
-import {submit} from '../utils/addVeiculo'
-import { useState } from 'react';
+import { submit, fetchCombustiveis } from '../utils/addVeiculo'
+import React, { useState, useEffect } from 'react';
+
 
 function addVeiculo() {
+    const [combustiveis, setCombustiveis] = useState([]);
+
+    useEffect(() => {
+        fetchCombustiveis().then(dadosAPI => {
+            setCombustiveis(dadosAPI);
+        });
+    }, []);
+
     const [dados, setDados] = useState({
-        modelo:'',
-        valor:'',
-        versao:'',
-        linkIMG:'',
-        anoProducao:'',
-        anoLancamento:'',
-        combustivel:'',
-        porta:'',
-        motor:'',
-        carroceria:'',
-        pilotoAutomatico:'true',
-        climatizador:'true',
-        vidro:'true',
-        am_fm:'true',
-        auxiliar:'true',
-        bluetooth:'true',
-        cd_player:'true',
-        dvd_player:'true',
-        usb:'true',
-        mp3:'true'
+        modelo: '',
+        valor: '',
+        versao: '',
+        linkIMG: '',
+        anoProducao: '',
+        anoLancamento: '',
+        combustivel: '',
+        porta: '',
+        motor: '',
+        carroceria: '',
+        pilotoAutomatico: 'true',
+        climatizador: 'true',
+        vidro: 'true',
+        am_fm: 'true',
+        auxiliar: 'true',
+        bluetooth: 'true',
+        cd_player: 'true',
+        dvd_player: 'true',
+        usb: 'true',
+        mp3: 'true'
     });
 
     const handleChange = (e) => {
@@ -35,17 +44,19 @@ function addVeiculo() {
             [id]: value,
         }));
     };
-    
+
     const EnviandoSubmit = (e) => {
         e.preventDefault();
         submit(dados);
     };
 
+
     return (
         <>
             <Header />
-            <main className='container mt-3'>
+            <main className='container pt-3 mb-5 mainAddVeiculo'>
                 <h1 className='text-center'>Adicionar dados para a API Carros!</h1>
+                <p className='text-center'>Caso queira adicionar algum veículo para o nosso banco de dados, fique a vontade para preencher o formulário!😁😀</p>
                 <form action="" onSubmit={EnviandoSubmit} className='mt-2'>
                     <label htmlFor="modelo">Adicione o modelo do veiculo:</label>
                     <input
@@ -82,7 +93,9 @@ function addVeiculo() {
                         value={dados.linkIMG}
                         onChange={handleChange}
                     />
-
+                    <label htmlFor=""><b>A imagem inserida acima aparecerá aqui:</b></label> <br />
+                    <img src={dados.linkIMG} />
+                    <br />
                     <label htmlFor="anoProducao">Adicione o ano de produção:</label>
                     <input
                         type="text"
@@ -93,13 +106,13 @@ function addVeiculo() {
                     />
 
                     <label htmlFor="anoLancamento">Adicione o ano de lançamento:</label>
-                    <input
-                        type="text"
-                        className='form-control'
-                        id='anoLancamento'
-                        value={dados.anoLancamento}
-                        onChange={handleChange}
-                    />
+                    <select name=""  className='form-select'>
+                        {combustiveis.map(dados => (
+                            <option key={dados.id} value={dados.nome_combustivel}>
+                                {dados.nome_combustivel}
+                            </option>
+                        ))}
+                    </select>
 
                     <label htmlFor="combustivel">Adicione o tipo de combustivel:</label>
                     <input
@@ -142,20 +155,20 @@ function addVeiculo() {
                     />
 
                     <label htmlFor="pilotoAutomatico">O carro tem piloto automâtico?</label>
-                    <select 
+                    <select
                         id="pilotoAutomatico"
                         className='form-select'
                         value={dados.pilotoAutomatico}
                         onChange={handleChange}
-                        >
-                            
+                    >
+
                         <option value="true">Sim</option>
                         <option value="false">Não</option>
                     </select>
 
                     <label htmlFor="climatizador">O carro tem climatizador</label>
-                    <select 
-                        id="climatizador" 
+                    <select
+                        id="climatizador"
                         className='form-select'
                         value={dados.climatizador}
                         onChange={handleChange}
@@ -166,8 +179,8 @@ function addVeiculo() {
                     </select>
 
                     <label htmlFor="vidro">O carro tem vidro automâtico?</label>
-                    <select 
-                        id="vidro" 
+                    <select
+                        id="vidro"
                         className='form-select'
                         value={dados.vidro}
                         onChange={handleChange}
@@ -178,7 +191,7 @@ function addVeiculo() {
                     </select>
 
                     <label htmlFor="am_fm">O carro tem rádio AM e FM</label>
-                    <select 
+                    <select
                         id="am_fm"
                         className='form-select'
                         value={dados.am_fm}
@@ -190,7 +203,7 @@ function addVeiculo() {
                     </select>
 
                     <label htmlFor="auxiliar">O carro tem entrada auxiliar?</label>
-                    <select 
+                    <select
                         id="auxiliar"
                         className='form-select'
                         value={dados.auxiliar}
@@ -202,7 +215,7 @@ function addVeiculo() {
                     </select>
 
                     <label htmlFor="bluetooth">O carro tem Bluetooth?</label>
-                    <select 
+                    <select
                         id="bluetooth"
                         className='form-select'
                         value={dados.bluetooth}
@@ -214,7 +227,7 @@ function addVeiculo() {
                     </select>
 
                     <label htmlFor="cd_player">O carro tem CD Player?</label>
-                    <select 
+                    <select
                         id="cd_player"
                         className='form-select'
                         value={dados.cd_player}
@@ -226,7 +239,7 @@ function addVeiculo() {
                     </select>
 
                     <label htmlFor="dvd_player">O carro tem DVD Player?</label>
-                    <select 
+                    <select
                         id="dvd_player"
                         value={dados.dvd_player}
                         className='form-select'
@@ -238,10 +251,10 @@ function addVeiculo() {
                     </select>
 
                     <label htmlFor="usb">O carro tem entrada USB?</label>
-                    <select 
+                    <select
                         id="usb"
                         className='form-select'
-                        value={dados.usb}    
+                        value={dados.usb}
                         onChange={handleChange}
                     >
 
@@ -264,7 +277,7 @@ function addVeiculo() {
                     <button type='submit' className='btn btn-primary btn-lg my-2'>Enviar dados</button>
                 </form>
             </main>
-        <Footer/>
+            <Footer />
         </>
     )
 }
