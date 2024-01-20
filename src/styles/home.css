@@ -1,4 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
 :root {
     --gray: #f2f2f2;
     --boxShadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -7,13 +7,14 @@
     background-color: var(--gray);
 }
 .welcome > img{
-    max-width: 575px;
-    border-radius: 13px;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
     box-shadow: var(--boxShadow);
 }
 h1{
     font-weight: 600;
-    font-family: 'SF Pro Display', sans-serif;
 }
 .img-txt{
     border-radius: 13px 0px 13px 0px;
@@ -23,6 +24,10 @@ h1{
     height: 100%;
     object-fit: cover;
     box-shadow: var(--boxShadow);
+}
+
+marquee{
+    margin: -15px 0 -125px 0;
 }
 
 .documentation{
@@ -42,10 +47,13 @@ h1{
     section{
         align-items: center;
         justify-content: center;
-        flex-direction: column-reverse;
+        flex-direction: column;
         text-align: center;
     }
     .me-5{
         margin: 0 !important; 
+    }
+    .section-1{
+        flex-direction: column-reverse;
     }
 }

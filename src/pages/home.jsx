@@ -6,13 +6,13 @@ function Home() {
     <>
       <Header/>
         <main>
-            <section className='text-center py-4 welcome'>
+            <section className='text-center pt-4 welcome'>
                 <h1>Bem vindo ao APICarros.</h1>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, ab ex. Odio nisi ad dolores libero odit eius perspiciatis voluptatibus? Nobis quas libero nisi? Iure praesentium officiis vel tempore vitae!</p>
-                <img src="https://i.pinimg.com/originals/e5/27/d6/e527d6ec5e7796f2d19d87a949cedfa7.gif" alt="image car"/>
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1fcd7937-324c-4714-9aae-04e3e5d404df/dgcvnee-ca89d39c-6b92-484d-8011-bb57e26e6322.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzFmY2Q3OTM3LTMyNGMtNDcxNC05YWFlLTA0ZTNlNWQ0MDRkZlwvZGdjdm5lZS1jYTg5ZDM5Yy02YjkyLTQ4NGQtODAxMS1iYjU3ZTI2ZTYzMjIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.gobrfXRh3q8e9sVZDtYFNwINT0pq4HXKs9l1P-tcGwY" alt="image car"/>
             </section>
 
-            <section className='container d-flex justify-content-between mt-5'>
+            <section className='container d-flex justify-content-between mt-5 section-1'>
               <article className='mt-1'>
                 <h1>A API feita para quem gosta de carros.</h1>
                 <p>
@@ -41,6 +41,10 @@ function Home() {
                   </p>
                 </article>
             </section>
+
+            <marquee scrollamount="20" direction="right">
+              <img src="https://static.wixstatic.com/media/eea52e_bee1cc506a7948b39878a0a72c4306a9~mv2.gif" alt="car running" width="200"/>
+            </marquee>
 
             <section className='text-center py-4 mt-5 documentation'>
               <h1>Documentação</h1>
