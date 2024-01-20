@@ -5,8 +5,8 @@ import '../styles/footer.css'
 function Header() {
     return (
       <>
-      <footer className='text-center bg-dark text-light mt-3 p-2'>
-            <b>Feito com ❤ por ...</b>
+      <footer className='bg-dark text-center py-3'>
+            <b className='text-light '>Feito com ❤ por ...</b>
       </footer>
       </>
     )
