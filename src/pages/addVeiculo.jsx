@@ -1,27 +1,38 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
 import '../styles/addVeiculo.css'
-import { submit, fetchCombustiveis } from '../utils/addVeiculo'
+import { submit, fetchCombustiveis, fetchMarcas, testeMarca } from '../utils/addVeiculo'
 import React, { useState, useEffect } from 'react';
 
 
 function addVeiculo() {
     const [combustiveis, setCombustiveis] = useState([]);
-
     useEffect(() => {
         fetchCombustiveis().then(dadosAPI => {
             setCombustiveis(dadosAPI);
         });
     }, []);
 
+    useEffect(() => {// Chama a função testeMarca quando o componente é montado
+        testeMarca();
+      }, []); 
+
+    const [marcas, setMarcas] = useState([]);
+    useEffect(() => {
+        fetchMarcas().then(dadosAPI => {
+            setMarcas(dadosAPI);
+        });
+    }, []);
+
     const [dados, setDados] = useState({
-        modelo: '',
+        marca: '',
+        nome_marca: '',
         valor: '',
         versao: '',
         linkIMG: '',
         anoProducao: '',
         anoLancamento: '',
-        combustivel: '',
+        combustivel: '1',
         porta: '',
         motor: '',
         carroceria: '',
@@ -58,12 +69,25 @@ function addVeiculo() {
                 <h1 className='text-center'>Adicionar dados para a API Carros!</h1>
                 <p className='text-center'>Caso queira adicionar algum veículo para o nosso banco de dados, fique a vontade para preencher o formulário!😁😀</p>
                 <form action="" onSubmit={EnviandoSubmit} className='mt-2'>
-                    <label htmlFor="modelo">Adicione o modelo do veiculo:</label>
+
+                    <label htmlFor="marca">Adicione a marca do veiculo:</label>
+                    <select 
+                    className='form-select' 
+                    onChange={handleChange} 
+                    value={dados.marca}
+                    id='marca'>
+
+                        {marcas.map(dados => (
+                            <option value={dados.id} >
+                                {dados.nome_marca}
+                            </option>
+                        ))}
+                    </select>
                     <input
                         type="text"
                         className='form-control'
-                        id='modelo'
-                        value={dados.modelo}
+                        id='marca'
+                        value={dados.marca}
                         onChange={handleChange}
                     />
 
@@ -106,22 +130,28 @@ function addVeiculo() {
                     />
 
                     <label htmlFor="anoLancamento">Adicione o ano de lançamento:</label>
-                    <select name=""  className='form-select'>
+                    <input
+                        type="text"
+                        className='form-control'
+                        id='anoLancamento'
+                        value={dados.anoLancamento}
+                        onChange={handleChange}
+                    />
+                    
+
+                    <label htmlFor="combustivel">Adicione o tipo de combustivel:</label>
+                    <select 
+                    className='form-select' 
+                    onChange={handleChange} 
+                    value={dados.combustivel}
+                    id='combustivel'>
+
                         {combustiveis.map(dados => (
-                            <option key={dados.id} value={dados.nome_combustivel}>
+                            <option value={dados.id} >
                                 {dados.nome_combustivel}
                             </option>
                         ))}
                     </select>
-
-                    <label htmlFor="combustivel">Adicione o tipo de combustivel:</label>
-                    <input
-                        type="text"
-                        className='form-control'
-                        id='combustivel'
-                        value={dados.combustivel}
-                        onChange={handleChange}
-                    />
 
                     <label htmlFor="porta">Adicione a quantidade de portas:</label>
                     <input
