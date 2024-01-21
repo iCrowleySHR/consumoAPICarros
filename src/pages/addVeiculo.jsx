@@ -1,7 +1,7 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
 import '../styles/addVeiculo.css'
-import { submit, fetchCombustiveis, fetchMarcas, testeMarca } from '../utils/addVeiculo'
+import { submit, fetchCombustiveis, fetchMarcas, fetchTransmissão } from '../utils/addVeiculo'
 import React, { useState, useEffect } from 'react';
 
 
@@ -13,9 +13,6 @@ function addVeiculo() {
         });
     }, []);
 
-    useEffect(() => {// Chama a função testeMarca quando o componente é montado
-        testeMarca();
-      }, []); 
 
     const [marcas, setMarcas] = useState([]);
     useEffect(() => {
@@ -24,9 +21,15 @@ function addVeiculo() {
         });
     }, []);
 
+    const [transmissao, setTransmissao] = useState([]);
+    useEffect(() => {
+        fetchTransmissão().then(dadosAPI => {
+            setTransmissao(dadosAPI);
+        });
+    }, []);
+
     const [dados, setDados] = useState({
-        marca: '',
-        nome_marca: '',
+        marca: '1',
         valor: '',
         versao: '',
         linkIMG: '',
@@ -45,7 +48,8 @@ function addVeiculo() {
         cd_player: 'true',
         dvd_player: 'true',
         usb: 'true',
-        mp3: 'true'
+        mp3: 'true',
+        transmissao: '1'
     });
 
     const handleChange = (e) => {
@@ -68,7 +72,7 @@ function addVeiculo() {
             <main className='container pt-3 mb-5 mainAddVeiculo'>
                 <h1 className='text-center'>Adicionar dados para a API Carros!</h1>
                 <p className='text-center'>Caso queira adicionar algum veículo para o nosso banco de dados, fique a vontade para preencher o formulário!😁😀</p>
-                <form action="" onSubmit={EnviandoSubmit} className='mt-2'>
+                <form onSubmit={EnviandoSubmit} className='mt-2'>
 
                     <label htmlFor="marca">Adicione a marca do veiculo:</label>
                     <select 
@@ -78,18 +82,11 @@ function addVeiculo() {
                     id='marca'>
 
                         {marcas.map(dados => (
-                            <option value={dados.id} >
+                            <option value={dados.id} key={dados.id} >
                                 {dados.nome_marca}
                             </option>
                         ))}
                     </select>
-                    <input
-                        type="text"
-                        className='form-control'
-                        id='marca'
-                        value={dados.marca}
-                        onChange={handleChange}
-                    />
 
                     <label htmlFor="valor">Adicione o valor do carro:</label>
                     <input
@@ -108,6 +105,20 @@ function addVeiculo() {
                         value={dados.versao}
                         onChange={handleChange}
                     />
+
+                    <label htmlFor="transmissao">Adicione a transmissão do carro:</label>
+                    <select 
+                    className='form-select' 
+                    onChange={handleChange} 
+                    value={dados.transmissao}
+                    id='transmissao'>
+
+                        {transmissao.map(dados => (
+                            <option value={dados.id} key={dados.id} >
+                                {dados.nome_transmissao}
+                            </option>
+                        ))}
+                    </select>
 
                     <label htmlFor="linkIMG">Adicione algum link de alguma imagem do carro:</label>
                     <input
@@ -147,7 +158,7 @@ function addVeiculo() {
                     id='combustivel'>
 
                         {combustiveis.map(dados => (
-                            <option value={dados.id} >
+                            <option value={dados.id} key={dados.id} >
                                 {dados.nome_combustivel}
                             </option>
                         ))}
