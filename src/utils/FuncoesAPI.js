@@ -28,15 +28,13 @@ export const fetchTransmissão = () => {
 };
 
 /*======================================================================================================================= */
-/*ENVIAR DADOS PARA API */
-export function submit(dadosUsuario) {
-  let username = '123'
-  let password = '123'
-
+/*ENVIAR DADOS PARA API VEICULO*/
+export function submitVeiculo(dadosUsuario) {
+  let username = 'admin@email.com'
+  let password = 'admin'
   const credentials = btoa(`${username}:${password}`);
-  console.log(credentials)
 
-  let valoresEnviar = [
+  let valoresEnviar = 
     {
       "valor": dadosUsuario.valor,
       "id_modelo": 4,
@@ -61,8 +59,7 @@ export function submit(dadosUsuario) {
       "dvd_player": dadosUsuario.dvd_player,
       "leitor_mp3": dadosUsuario.mp3,
       "entrada_usb": dadosUsuario.usb
-    }
-  ];
+    };
 
   console.log(valoresEnviar)
 
@@ -72,38 +69,84 @@ export function submit(dadosUsuario) {
     'Content-Type': 'application/json',
     'Authorization': `Basic ${credentials}`,
   },
-      body:JSON.stringify({
-        "valor": "54890.55",
-        "id_modelo": 4,
-        "id_combustivel": 2,
-        "id_transmissao": 1,
-        "versao": "1.8 LT SPORT6 16V FLEX 4P MANUAL",
-        "imagem_um": "https://http2.mlstatic.com/D_NQ_NP_732550-MLB73912531540_012024-O.webp",
-        "imagem_dois": "https://http2.mlstatic.com/D_NQ_NP_724354-MLB73912531550_012024-O.webp",
-        "imagem_tres": null,
-        "ano_producao": 2013,
-        "ano_lancamento": 2013,
-        "portas": 4,
-        "motor": "1.8",
-        "carroceria": "Hatch",
-        "piloto_automatico": false,
-        "climatizador": true,
-        "vidro_automatico": true,
-        "am_fm": true,
-        "entrada_auxiliar": false,
-        "bluetooth": false,
-        "cd_player": false,
-        "dvd_player": false,
-        "leitor_mp3": false,
-        "entrada_usb": false
-      })
+      body:JSON.stringify(valoresEnviar)
     })
       .then(resposta => resposta.json())
       .then(resultadoEnvio => {
         console.log(resultadoEnvio)
       })
+}
+/*======================================================================================================================= */
+/*ENVIAR DADOS PARA API COMBUSTIVEL*/
+export function submitCombustivel(dadosUsuario) {
+  let username = 'admin@email.com'
+  let password = 'admin'
+  const credentials = btoa(`${username}:${password}`);
 
+  let valoresEnviar = {
+    "nome_combustivel": dadosUsuario.combustivel
+}
+  
+  fetch('http://localhost/github/ApiCarros/api/v1/fuels', {
+      method: 'POST',
+      headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Basic ${credentials}`,
+  },
+      body:JSON.stringify(valoresEnviar)
+    })
+      .then(resposta => resposta.json())
+      .then(resultadoEnvio => {
+        return resultadoEnvio.success 
+      })
+}
 
+/*======================================================================================================================= */
+/*ENVIAR DADOS PARA API TRANSMISSAO*/
+export function submitTransmissao(dadosUsuario) {
+  let username = 'admin@email.com'
+  let password = 'admin'
+  const credentials = btoa(`${username}:${password}`);
 
+  let valoresEnviar = {
+    "nome_transmissao": dadosUsuario.transmissao
+}
+  
+  fetch('http://localhost/github/ApiCarros/api/v1/transmissions', {
+      method: 'POST',
+      headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Basic ${credentials}`,
+  },
+      body:JSON.stringify(valoresEnviar)
+    })
+      .then(resposta => resposta.json())
+      .then(resultadoEnvio => {
+        console.log(resultadoEnvio)
+      })
+}
 
+/*======================================================================================================================= */
+/*ENVIAR DADOS PARA API MARCA*/
+export function submitMarca(dadosUsuario) {
+  let username = 'admin@email.com'
+  let password = 'admin'
+  const credentials = btoa(`${username}:${password}`);
+
+  let valoresEnviar = {
+    "nome_marca": dadosUsuario.marca
+}
+  
+  fetch('http://localhost/github/ApiCarros/api/v1/brands', {
+      method: 'POST',
+      headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Basic ${credentials}`,
+  },
+      body:JSON.stringify(valoresEnviar)
+    })
+      .then(resposta => resposta.json())
+      .then(resultadoEnvio => {
+        console.log(resultadoEnvio)
+      })
 }

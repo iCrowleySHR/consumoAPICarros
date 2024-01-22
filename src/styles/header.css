@@ -6,4 +6,7 @@
 .navbar-toggler{
     border: none;
 }
-
+.title-nav{
+    font-size: 25px;
+    font-weight: 900;
+}

@@ -1,8 +1,9 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
-import '../styles/addVeiculo.css'
-import { submit, fetchCombustiveis, fetchMarcas, fetchTransmissão } from '../utils/addVeiculo'
+import '../styles/form.css'
+import { submitVeiculo, fetchCombustiveis, fetchMarcas, fetchTransmissão } from '../utils/FuncoesAPI'
 import React, { useState, useEffect } from 'react';
+import NavDados from '../components/navDados';
 
 
 function addVeiculo() {
@@ -62,14 +63,15 @@ function addVeiculo() {
 
     const EnviandoSubmit = (e) => {
         e.preventDefault();
-        submit(dados);
+        submitVeiculo(dados);
     };
 
 
     return (
         <>
             <Header />
-            <main className='container pt-3 mb-5 mainAddVeiculo'>
+            <NavDados/>
+            <main className='container pt-3 mb-5 main-adicionar'>
                 <h1 className='text-center'>Adicionar dados para a API Carros!</h1>
                 <p className='text-center'>Caso queira adicionar algum veículo para o nosso banco de dados, fique a vontade para preencher o formulário!😁😀</p>
                 <form onSubmit={EnviandoSubmit} className='mt-2'>
