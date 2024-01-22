@@ -9,14 +9,14 @@ function NavDados() {
                 <div className="container-fluid">
                     <div className="collapse navbar-collapse justify-content-center" >
                         <ul className="navbar-nav">
-                            <li className="nav-item mr-2">
-                                <a className="nav-link" href="/adicionar-combustivel">Adicionar Combustível</a>
+                            <li className="nav-item">
+                                <a className="nav-link text-nav" href="/adicionar-combustivel">Adicionar Combustível</a>
                             </li>
-                            <li className="nav-item mr-2">
-                                <a className="nav-link" href="/adicionar-transmissao">Adicionar Trasmissão</a>
+                            <li className="nav-item ">
+                                <a className="nav-link text-nav" href="/adicionar-transmissao">Adicionar Trasmissão</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/adicionar-marca">Adicionar Marca</a>
+                                <a className="nav-link text-nav" href="/adicionar-marca">Adicionar Marca</a>
                             </li>
                         </ul>
                     </div>

@@ -1,3 +1,9 @@
 .nav-add-color{
     background-color: #00aaff;
 }
+@media screen and (max-width:473px){
+     .text-nav{
+        font-size: 12px;
+        font-weight: 900;
+     }
+}
