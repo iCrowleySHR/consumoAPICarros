@@ -97,7 +97,7 @@ export function submitCombustivel(dadosUsuario) {
     })
       .then(resposta => resposta.json())
       .then(resultadoEnvio => {
-        return resultadoEnvio.success 
+        return resultadoEnvio.success
       })
 }
 

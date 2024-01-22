@@ -25,21 +25,22 @@ function addCombustivel() {
             [id]: value,
         }));
     };
-
-    const [respostaAPI, setRespostaAPI] = useState([])
+    const [respostaAPI, setRespostaAPI] = useState([]);
     const EnviandoSubmit = (e) => {
         e.preventDefault();
+    /*********************************************************************************************** */
         submitCombustivel(dados)
-        .then(resposta => {
-            setRespostaAPI(resposta)
-            console.log(respostaAPI)
-        })
-        .catch(erro => {
-            console.error(erro)
-        })
-        
-    };
-
+          .then(resposta => {
+            setRespostaAPI(resposta);
+          })
+          .catch(erro => {
+            console.error(erro);
+          });
+      };
+    
+      useEffect(() => {
+        console.log(respostaAPI);
+      }, [respostaAPI]);
 
     return (
         <>
