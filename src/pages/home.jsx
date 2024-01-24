@@ -16,13 +16,12 @@ function Home() {
 
             <section className='container d-flex justify-content-between mt-5 section-1'>
               <article className='mt-1'>
-                <h1>A API feita para quem gosta de <span className='text-effect'>carros</span>.</h1>
+                <h1> Uma API Rest que usa em sua arquitetura <span className='text-effect'>MVC</span>.</h1>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus necessitatibus expedita inventore
-                  error quod consectetur maxime, debitis dignissimos. Repellat vero necessitatibus unde odit cumque sapiente eaque minus
-                  ipsam laborum suscipit.
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos odio rem quisquam harum unde error quasi delectus asperiores
-                  nostrum deleniti possimus quidem commodi quo quas aut similique veniam, labore libero?
+                  Montada inteiramente em PHP, essa plataforma foi desenvolvida para servir como documentação e possibilitar inserções na API
+                  de carros, veja em <a href="/documentacao">documentação</a> exemplos
+                  de JSON e como implementar no seu projeto! Essa API pode ser integrada facilmente a diferentes sistemas, fornecendo detalhes valiosos sobre carros para melhorar
+                  a experiência do usuário ou para qualquer finalidade específica desejada.
                 </p>
               </article>
               
@@ -35,11 +34,10 @@ function Home() {
                 <article className='mt-1'>
                   <h1 className='title'>A API feita para quem gosta de <span className='text-effect'>carros</span>.</h1>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus necessitatibus expedita inventore
-                    error quod consectetur maxime, debitis dignissimos. Repellat vero necessitatibus unde odit cumque sapiente eaque minus
-                    ipsam laborum suscipit.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos odio rem quisquam harum unde error quasi delectus asperiores
-                    nostrum deleniti possimus quidem commodi quo quas aut similique veniam, labore libero?
+                  Explore as diversas informações disponíveis, desde detalhes sobre o ano de lançamento, conectividade Bluetooth,
+                  até a presença de recursos como CD player, DVD player, e muito mais. A API é projetada para oferecer uma visão
+                  abrangente de cada veículo, facilitando a obtenção de informações essenciais para entusiastas automotivos,
+                  desenvolvedores e profissionais da indústria.
                   </p>
                 </article>
             </section>

@@ -8,7 +8,7 @@ function NavDados() {
             <nav className="navbar navbar-expand nav-add-color mb-3">
                 <div className="container-fluid">
                     <div className="collapse navbar-collapse justify-content-center" >
-                        <ul className="navbar-nav">
+                        <ul className="navbar-nav text-center">
                             <li className="nav-item">
                                 <a className="nav-link text-nav" href="/adicionar-combustivel">Adicionar Combustível</a>
                             </li>
@@ -17,6 +17,9 @@ function NavDados() {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link text-nav" href="/adicionar-marca">Adicionar Marca</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link text-nav" href="/adicionar-modelo">Adicionar Modelo</a>
                             </li>
                         </ul>
                     </div>

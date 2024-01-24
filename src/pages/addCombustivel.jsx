@@ -1,12 +1,15 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
 import NavDados from '../components/navDados';
+import Swal from 'sweetalert2'
 import { fetchCombustiveis, submitCombustivel } from '../utils/FuncoesAPI';
 import '../styles/form.css'
 import React, { useState, useEffect } from 'react';
 
 function addCombustivel() {
     const [combustiveis, setCombustiveis] = useState([]);
+
+
 
     useEffect(() => {
         fetchCombustiveis().then(dadosAPI => {
@@ -25,22 +28,33 @@ function addCombustivel() {
             [id]: value,
         }));
     };
-    const [respostaAPI, setRespostaAPI] = useState([]);
     const EnviandoSubmit = (e) => {
         e.preventDefault();
-    /*********************************************************************************************** */
         submitCombustivel(dados)
-          .then(resposta => {
-            setRespostaAPI(resposta);
-          })
-          .catch(erro => {
+        .then(resultado => {
+            if (resultado === true) {
+                Swal.fire({
+                    title: 'Enviado com succeso!',
+                    text: 'Os dados inseridos foi implementado no nosso banco',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                })
+                setDados((prevDados) => ({
+                    ...prevDados,
+                    combustivel: ''
+                }));
+            }else{
+                Swal.fire({
+                    title: 'Parece que ocorreu algum erro!',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                })
+            }
+        })
+        .catch(erro => {
             console.error(erro);
-          });
-      };
-    
-      useEffect(() => {
-        console.log(respostaAPI);
-      }, [respostaAPI]);
+        }); 
+    };
 
     return (
         <>
@@ -61,7 +75,7 @@ function addCombustivel() {
                 </ul>
                 <form onSubmit={EnviandoSubmit}>
                     <label>Qual combustivel você deseja adicionar?</label>
-                    <input type="text" className='form-control' id='combustivel' onChange={handleChange} required />
+                    <input type="text" className='form-control' id='combustivel' value={dados.combustivel} onChange={handleChange} required />
 
                     <button type='submit' className='btn btn-primary btn-lg my-2'>Enviar dados</button>
                 </form>

@@ -19,8 +19,18 @@ export const fetchCombustiveis = () => {
 
 /*======================================================================================================================= */
 /*PEGAR DADOS SOBRE TRANSMISSÃO */
-export const fetchTransmissão = () => {
+export const fetchTransmissao = () => {
   return fetch('http://localhost/github/ApiCarros/api/v1/transmissions')
+    .then(resposta => resposta.json())
+    .catch(erro => {
+      console.error('Erro ao buscar dados da API:', erro);
+    });
+};
+
+/*======================================================================================================================= */
+/*PEGAR DADOS SOBRE MODELOS */
+export const fetchModelo = () => {
+  return fetch('http://localhost/github/ApiCarros/api/v1/carmodels')
     .then(resposta => resposta.json())
     .catch(erro => {
       console.error('Erro ao buscar dados da API:', erro);
@@ -37,7 +47,7 @@ export function submitVeiculo(dadosUsuario) {
   let valoresEnviar = 
     {
       "valor": dadosUsuario.valor,
-      "id_modelo": 4,
+      "id_modelo": dadosUsuario.modelo,
       "id_combustivel": dadosUsuario.combustivel,
       "id_transmissao": dadosUsuario.transmissao,
       "versao": dadosUsuario.versao,
@@ -63,7 +73,7 @@ export function submitVeiculo(dadosUsuario) {
 
   console.log(valoresEnviar)
 
-  fetch('http://localhost/github/ApiCarros/api/v1/cars', {
+  return fetch('http://localhost/github/ApiCarros/api/v1/cars', {
       method: 'POST',
       headers: {
     'Content-Type': 'application/json',
@@ -73,7 +83,7 @@ export function submitVeiculo(dadosUsuario) {
     })
       .then(resposta => resposta.json())
       .then(resultadoEnvio => {
-        console.log(resultadoEnvio)
+        return resultadoEnvio.success
       })
 }
 /*======================================================================================================================= */
@@ -87,7 +97,7 @@ export function submitCombustivel(dadosUsuario) {
     "nome_combustivel": dadosUsuario.combustivel
 }
   
-  fetch('http://localhost/github/ApiCarros/api/v1/fuels', {
+  return fetch('http://localhost/github/ApiCarros/api/v1/fuels', {
       method: 'POST',
       headers: {
     'Content-Type': 'application/json',
@@ -112,7 +122,7 @@ export function submitTransmissao(dadosUsuario) {
     "nome_transmissao": dadosUsuario.transmissao
 }
   
-  fetch('http://localhost/github/ApiCarros/api/v1/transmissions', {
+  return fetch('http://localhost/github/ApiCarros/api/v1/transmissions', {
       method: 'POST',
       headers: {
     'Content-Type': 'application/json',
@@ -122,7 +132,7 @@ export function submitTransmissao(dadosUsuario) {
     })
       .then(resposta => resposta.json())
       .then(resultadoEnvio => {
-        console.log(resultadoEnvio)
+        return resultadoEnvio.success
       })
 }
 
@@ -137,7 +147,7 @@ export function submitMarca(dadosUsuario) {
     "nome_marca": dadosUsuario.marca
 }
   
-  fetch('http://localhost/github/ApiCarros/api/v1/brands', {
+  return fetch('http://localhost/github/ApiCarros/api/v1/brands', {
       method: 'POST',
       headers: {
     'Content-Type': 'application/json',
@@ -147,6 +157,34 @@ export function submitMarca(dadosUsuario) {
     })
       .then(resposta => resposta.json())
       .then(resultadoEnvio => {
-        console.log(resultadoEnvio)
+        return resultadoEnvio.success
+      })
+}
+
+/*======================================================================================================================= */
+/*ENVIAR DADOS PARA API MODELO*/
+export function submitModelo(dadosUsuario) {
+  let username = 'admin@email.com'
+  let password = 'admin'
+  const credentials = btoa(`${username}:${password}`);
+
+  let valoresEnviar = {
+      "id_marca": dadosUsuario.id_marca,
+      "nome_modelo": dadosUsuario.modelo
+  }
+
+  console.log(valoresEnviar)
+  
+  return fetch('http://localhost/github/ApiCarros/api/v1/carmodels', {
+      method: 'POST',
+      headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Basic ${credentials}`,
+  },
+      body:JSON.stringify(valoresEnviar)
+    })
+      .then(resposta => resposta.json())
+      .then(resultadoEnvio => {
+        return resultadoEnvio.success
       })
 }

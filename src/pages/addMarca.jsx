@@ -1,6 +1,7 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
 import NavDados from '../components/navDados';
+import Swal from 'sweetalert2'
 import {fetchMarcas, submitMarca } from '../utils/FuncoesAPI';
 import '../styles/form.css'
 import React, { useState, useEffect } from 'react';
@@ -28,7 +29,30 @@ function addMarca() {
 
     const EnviandoSubmit = (e) => {
         e.preventDefault();
-        submitMarca(dados);
+        submitMarca(dados)
+        .then(resultado => {
+            if (resultado === true) {
+                Swal.fire({
+                    title: 'Enviado com succeso!',
+                    text: 'Os dados inseridos foi implementado no nosso banco',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                })
+                setDados((prevDados) => ({
+                    ...prevDados,
+                    marca: ''
+                }));
+            }else{
+                Swal.fire({
+                    title: 'Parece que ocorreu algum erro!',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                })
+            }
+        })
+        .catch(erro => {
+            console.error(erro);
+        });  
     };
 
 
@@ -51,7 +75,7 @@ function addMarca() {
                 </ul>
                 <form onSubmit={EnviandoSubmit}>
                     <label>Digite a marca que você deseja adicionar</label>
-                    <input type="text" className='form-control' id='marca' onChange={handleChange} required />
+                    <input type="text" className='form-control' id='marca' value={dados.marca} onChange={handleChange} required />
 
                     <button type='submit' className='btn btn-primary btn-lg my-2'>Enviar dados</button>
                 </form>

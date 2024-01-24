@@ -7,6 +7,7 @@ import Documentacao from './pages/documentacao'
 import AdicionarCombustivel from './pages/addCombustivel'
 import AdicionarMarca from './pages/addMarca'
 import AdicionarTransmissao from './pages/addTransmissao'
+import AdicionarModelo from './pages/addModelo'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/adicionar-combustivel" element={<AdicionarCombustivel/>} />
           <Route path="/adicionar-marca" element={<AdicionarMarca/>} />
           <Route path="/adicionar-transmissao" element={<AdicionarTransmissao/>} />
+          <Route path="/adicionar-modelo" element={<AdicionarModelo/>} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>

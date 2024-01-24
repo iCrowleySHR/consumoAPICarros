@@ -1,8 +1,9 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
 import '../styles/form.css'
-import { submitVeiculo, fetchCombustiveis, fetchMarcas, fetchTransmissão } from '../utils/FuncoesAPI'
+import { submitVeiculo, fetchCombustiveis, fetchMarcas, fetchTransmissao, fetchModelo } from '../utils/FuncoesAPI'
 import React, { useState, useEffect } from 'react';
+import Swal from 'sweetalert2'
 import NavDados from '../components/navDados';
 
 
@@ -24,13 +25,20 @@ function addVeiculo() {
 
     const [transmissao, setTransmissao] = useState([]);
     useEffect(() => {
-        fetchTransmissão().then(dadosAPI => {
+        fetchTransmissao().then(dadosAPI => {
             setTransmissao(dadosAPI);
         });
     }, []);
 
+    const [modelo, setModelo] = useState([]);
+    useEffect(() => {
+        fetchModelo().then(dadosAPI => {
+            setModelo(dadosAPI);
+        });
+    }, []);
+
     const [dados, setDados] = useState({
-        marca: '1',
+        modelo: '1',
         valor: '',
         versao: '',
         linkIMG: '',
@@ -50,6 +58,7 @@ function addVeiculo() {
         dvd_player: 'true',
         usb: 'true',
         mp3: 'true',
+        usb:'true',
         transmissao: '1'
     });
 
@@ -63,7 +72,30 @@ function addVeiculo() {
 
     const EnviandoSubmit = (e) => {
         e.preventDefault();
-        submitVeiculo(dados);
+        submitVeiculo(dados)
+        .then(resultado => {
+            if (resultado === true) {
+                Swal.fire({
+                    title: 'Enviado com succeso!',
+                    text: 'Os dados inseridos foi implementado no nosso banco',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                })
+                setDados((prevDados) => ({
+                    ...prevDados,
+                    transmissao: ''
+                }));
+            }else{
+                Swal.fire({
+                    title: 'Parece que ocorreu algum erro!',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                })
+            }
+        })
+        .catch(erro => {
+            console.error(erro);
+        });
     };
 
 
@@ -76,16 +108,16 @@ function addVeiculo() {
                 <p className='text-center'>Caso queira adicionar algum veículo para o nosso banco de dados, fique a vontade para preencher o formulário!😁😀</p>
                 <form onSubmit={EnviandoSubmit} className='mt-2'>
 
-                    <label htmlFor="marca">Adicione a marca do veiculo:</label>
+                    <label htmlFor="modelo">Adicione o modelo do veiculo:</label>
                     <select 
                     className='form-select' 
                     onChange={handleChange} 
-                    value={dados.marca}
-                    id='marca'>
+                    value={dados.modelo}
+                    id='modelo'>
 
-                        {marcas.map(dados => (
+                        {modelo.map(dados => (
                             <option value={dados.id} key={dados.id} >
-                                {dados.nome_marca}
+                                {dados.nome_modelo}
                             </option>
                         ))}
                     </select>
@@ -130,7 +162,7 @@ function addVeiculo() {
                         value={dados.linkIMG}
                         onChange={handleChange}
                     />
-                    <label htmlFor=""><b>A imagem inserida acima aparecerá aqui:</b></label> <br />
+                    <label htmlFor="dados-img"><b>A imagem inserida acima aparecerá aqui:</b></label> <br />
                     <img src={dados.linkIMG} />
                     <br />
                     <label htmlFor="anoProducao">Adicione o ano de produção:</label>

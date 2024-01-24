@@ -20,7 +20,7 @@ function Header() {
                                 <a className="nav-link" href="/adicionar">Adicionar dados</a>
                             </li>
                             <li className="nav-item mx-3">
-                                <a className="nav-link" href="/consulta">Banco de Dados</a>
+                                <a className="nav-link" href="/consulta">Consulta</a>
                             </li>
                             <li className="nav-item mx-3">
                                 <a className="nav-link" href="/documentacao">Documentação</a>
