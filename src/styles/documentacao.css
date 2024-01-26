@@ -1,0 +1,15 @@
+table{
+    font-weight: 200;
+}
+pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: #333;
+}

@@ -38,6 +38,16 @@ export const fetchModelo = () => {
 };
 
 /*======================================================================================================================= */
+/*PEGAR DADOS SOBRE VEICULOS */
+export const fetchCarro = () => {
+  return fetch('http://localhost/github/ApiCarros/api/v1/cars')
+    .then(resposta => resposta.json())
+    .catch(erro => {
+      console.error('Erro ao buscar dados da API:', erro);
+    });
+};
+
+/*======================================================================================================================= */
 /*ENVIAR DADOS PARA API VEICULO*/
 export function submitVeiculo(dadosUsuario) {
   let username = 'admin@email.com'

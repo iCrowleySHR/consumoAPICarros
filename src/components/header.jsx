@@ -1,8 +1,20 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 import '../styles/header.css'
+import ScrollReveal from 'scrollreveal'
+import { useEffect } from 'react'
 
 function Header() {
+    useEffect(() => {
+        ScrollReveal().reveal('.container', {
+          delay: 100,
+          rotate:{
+            x:10,
+            y:10,
+            z:10
+        }
+        });
+      }, []);
     return (
       <>
         <header>
@@ -18,9 +30,6 @@ function Header() {
                         <ul className="navbar-nav">
                             <li className="nav-item mx-3">
                                 <a className="nav-link" href="/adicionar">Adicionar dados</a>
-                            </li>
-                            <li className="nav-item mx-3">
-                                <a className="nav-link" href="/consulta">Consulta</a>
                             </li>
                             <li className="nav-item mx-3">
                                 <a className="nav-link" href="/documentacao">Documentação</a>

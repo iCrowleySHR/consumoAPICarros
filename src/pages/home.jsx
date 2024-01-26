@@ -1,7 +1,41 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
 import '../styles/home.css'
+import ScrollReveal from 'scrollreveal'
+import { useState, useEffect } from 'react'
 function Home() {
+
+  useEffect(() => {
+    ScrollReveal().reveal('.container', {
+      delay: 300,
+      rotate:{
+        x:0,
+        y:10,
+        z:10
+    }
+    });
+    ScrollReveal().reveal('.welcome', {
+      delay: 100,
+      rotate:{
+        x:0,
+        y:10,
+        z:10
+    }
+    });
+    ScrollReveal().reveal('.documentation', {
+      delay: 300,
+      origin: 'right',
+      distance: '100px', 
+      duration: 400, 
+      easing: 'ease-in-out', 
+      rotate: {
+          x: 10,
+          y: 10,
+          z: 0
+      }
+  });
+  }, []);
+
   return (
     <>
       <Header/>

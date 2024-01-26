@@ -5,9 +5,22 @@ import { submitVeiculo, fetchCombustiveis, fetchMarcas, fetchTransmissao, fetchM
 import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2'
 import NavDados from '../components/navDados';
+import ScrollReveal from 'scrollreveal';
 
 
 function addVeiculo() {
+    useEffect(() => {
+        ScrollReveal().reveal('.container', {
+          delay: 150,
+          rotate:{
+            x:10,
+            y:10,
+            z:10
+        }
+        });
+      }, []);
+    
+
     const [combustiveis, setCombustiveis] = useState([]);
     useEffect(() => {
         fetchCombustiveis().then(dadosAPI => {
@@ -58,7 +71,6 @@ function addVeiculo() {
         dvd_player: 'true',
         usb: 'true',
         mp3: 'true',
-        usb:'true',
         transmissao: '1'
     });
 
@@ -106,7 +118,7 @@ function addVeiculo() {
             <main className='container pt-3 mb-5 main-adicionar'>
                 <h1 className='text-center'>Adicionar dados para a API Carros!</h1>
                 <p className='text-center'>Caso queira adicionar algum veículo para o nosso banco de dados, fique a vontade para preencher o formulário!😁😀</p>
-                <form onSubmit={EnviandoSubmit} className='mt-2'>
+                <form onSubmit={EnviandoSubmit} className='mt-2 form'>
 
                     <label htmlFor="modelo">Adicione o modelo do veiculo:</label>
                     <select 
