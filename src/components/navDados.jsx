@@ -1,19 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 import '../styles/navDados.css'
-import ScrollReveal from 'scrollreveal'
-import { useEffect } from 'react'
 
 function NavDados() {
-    useEffect(() => {
-        ScrollReveal().reveal('.nav-add-color', {
-            delay: 200,
-            origin: 'right',
-            distance: '500px', 
-            duration: 500, 
-            easing: 'ease-in-out', 
-        });
-      }, []);
     return (
         <>
             <nav className="navbar navbar-expand nav-add-color mb-3">

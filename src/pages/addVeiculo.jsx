@@ -9,18 +9,7 @@ import ScrollReveal from 'scrollreveal';
 
 
 function addVeiculo() {
-    useEffect(() => {
-        ScrollReveal().reveal('.container', {
-          delay: 150,
-          rotate:{
-            x:10,
-            y:10,
-            z:10
-        }
-        });
-      }, []);
     
-
     const [combustiveis, setCombustiveis] = useState([]);
     useEffect(() => {
         fetchCombustiveis().then(dadosAPI => {
