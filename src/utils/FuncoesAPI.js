@@ -1,6 +1,7 @@
+let linkBase = 'https://gustavosachettoapi.000webhostapp.com'
 /*PEGAR DADOS SOBRE AS MARCAS NA API*/
 export const fetchMarcas = () => {
-  return fetch('http://localhost/github/ApiCarros/api/v1/brands')
+  return fetch(`${linkBase}/api/v1/brands`)
     .then(resposta => resposta.json())
     .catch(erro => {
       console.error('Erro ao buscar dados da API:', erro);
@@ -10,7 +11,7 @@ export const fetchMarcas = () => {
 /*======================================================================================================================= */
 /*PEGAR DADOS SOBRE OS COMBUSTIVEIS*/
 export const fetchCombustiveis = () => {
-  return fetch('http://localhost/github/ApiCarros/api/v1/fuels')
+  return fetch(`${linkBase}/api/v1/fuels`)
     .then(resposta => resposta.json())
     .catch(erro => {
       console.error('Erro ao buscar dados da API:', erro);
@@ -20,7 +21,7 @@ export const fetchCombustiveis = () => {
 /*======================================================================================================================= */
 /*PEGAR DADOS SOBRE TRANSMISSÃO */
 export const fetchTransmissao = () => {
-  return fetch('http://localhost/github/ApiCarros/api/v1/transmissions')
+  return fetch(`${linkBase}/api/v1/transmissions`)
     .then(resposta => resposta.json())
     .catch(erro => {
       console.error('Erro ao buscar dados da API:', erro);
@@ -30,7 +31,7 @@ export const fetchTransmissao = () => {
 /*======================================================================================================================= */
 /*PEGAR DADOS SOBRE MODELOS */
 export const fetchModelo = () => {
-  return fetch('http://localhost/github/ApiCarros/api/v1/carmodels')
+  return fetch(`${linkBase}/api/v1/carmodels`)
     .then(resposta => resposta.json())
     .catch(erro => {
       console.error('Erro ao buscar dados da API:', erro);
@@ -40,7 +41,7 @@ export const fetchModelo = () => {
 /*======================================================================================================================= */
 /*PEGAR DADOS SOBRE VEICULOS */
 export const fetchCarro = () => {
-  return fetch('http://localhost/github/ApiCarros/api/v1/cars')
+  return fetch(`${linkBase}/api/v1/cars`)
     .then(resposta => resposta.json())
     .catch(erro => {
       console.error('Erro ao buscar dados da API:', erro);
@@ -83,7 +84,7 @@ export function submitVeiculo(dadosUsuario) {
 
   console.log(valoresEnviar)
 
-  return fetch('http://localhost/github/ApiCarros/api/v1/cars', {
+  return fetch(`${linkBase}/api/v1/cars`, {
       method: 'POST',
       headers: {
     'Content-Type': 'application/json',
@@ -107,7 +108,7 @@ export function submitCombustivel(dadosUsuario) {
     "nome_combustivel": dadosUsuario.combustivel
 }
   
-  return fetch('http://localhost/github/ApiCarros/api/v1/fuels', {
+  return fetch(`${linkBase}/api/v1/fuels`, {
       method: 'POST',
       headers: {
     'Content-Type': 'application/json',
@@ -132,7 +133,7 @@ export function submitTransmissao(dadosUsuario) {
     "nome_transmissao": dadosUsuario.transmissao
 }
   
-  return fetch('http://localhost/github/ApiCarros/api/v1/transmissions', {
+  return fetch(`${linkBase}/api/v1/transmissions`, {
       method: 'POST',
       headers: {
     'Content-Type': 'application/json',
@@ -157,7 +158,7 @@ export function submitMarca(dadosUsuario) {
     "nome_marca": dadosUsuario.marca
 }
   
-  return fetch('http://localhost/github/ApiCarros/api/v1/brands', {
+  return fetch(`${linkBase}/api/v1/brands`, {
       method: 'POST',
       headers: {
     'Content-Type': 'application/json',
@@ -185,7 +186,7 @@ export function submitModelo(dadosUsuario) {
 
   console.log(valoresEnviar)
   
-  return fetch('http://localhost/github/ApiCarros/api/v1/carmodels', {
+  return fetch(`${linkBase}/api/v1/carmodels`, {
       method: 'POST',
       headers: {
     'Content-Type': 'application/json',

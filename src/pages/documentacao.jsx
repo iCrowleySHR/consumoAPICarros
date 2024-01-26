@@ -83,7 +83,7 @@ function documentacao() {
                   </th>
                 </tr>
                 <tr>
-                  <th>http://localhost/github/ApiCarros/api/v1/cars</th>
+                  <th>https://gustavosachettoapi.000webhostapp.com/api/v1/cars</th>
                 </tr>
               </tbody>
             </table>
@@ -103,7 +103,7 @@ function documentacao() {
                   </th>
                 </tr>
                 <tr>
-                  <th>http://localhost/github/ApiCarros/api/v1/cars?page=7</th>
+                  <th>https://gustavosachettoapi.000webhostapp.com/api/v1/cars?page=7</th>
                 </tr>
               </tbody>
             </table>
@@ -123,7 +123,7 @@ function documentacao() {
                   </th>
                 </tr>
                 <tr>
-                  <th>http://localhost/github/ApiCarros/api/v1/cars/2</th>
+                  <th>https://gustavosachettoapi.000webhostapp.com/api/v1/cars/2</th>
                 </tr>
               </tbody>
             </table>
@@ -154,7 +154,7 @@ function documentacao() {
                   </th>
                 </tr>
                 <tr>
-                  <th>http://localhost/github/ApiCarros/api/v1/transmissions</th>
+                  <th>https://gustavosachettoapi.000webhostapp.com/api/v1/transmissions</th>
                 </tr>
               </tbody>
             </table>
@@ -174,7 +174,7 @@ function documentacao() {
                   </th>
                 </tr>
                 <tr>
-                  <th>http://localhost/github/ApiCarros/api/v1/transmissions/4</th>
+                  <th>https://gustavosachettoapi.000webhostapp.com/api/v1/transmissions/4</th>
                 </tr>
               </tbody>
             </table>
@@ -205,7 +205,7 @@ function documentacao() {
                   </th>
                 </tr>
                 <tr>
-                  <th>http://localhost/github/ApiCarros/api/v1/brands</th>
+                  <th>https://gustavosachettoapi.000webhostapp.com/api/v1/brands</th>
                 </tr>
               </tbody>
             </table>
@@ -225,7 +225,7 @@ function documentacao() {
                   </th>
                 </tr>
                 <tr>
-                  <th>http://localhost/github/ApiCarros/api/v1/brands/13</th>
+                  <th>https://gustavosachettoapi.000webhostapp.com/api/v1/brands/13</th>
                 </tr>
               </tbody>
             </table>
@@ -256,7 +256,7 @@ function documentacao() {
                   </th>
                 </tr>
                 <tr>
-                  <th>http://localhost/github/ApiCarros/api/v1/carmodels</th>
+                  <th>https://gustavosachettoapi.000webhostapp.com/api/v1/carmodels</th>
                 </tr>
               </tbody>
             </table>
@@ -276,7 +276,7 @@ function documentacao() {
                   </th>
                 </tr>
                 <tr>
-                  <th>http://localhost/github/ApiCarros/api/v1/carmodels/13</th>
+                  <th>https://gustavosachettoapi.000webhostapp.com/api/v1/carmodels/13</th>
                 </tr>
               </tbody>
             </table>
@@ -291,7 +291,7 @@ function documentacao() {
 
         <section>
           <article>
-            <h3 className='mt-5'>Como fazer consulta de modelos?</h3>
+            <h3 className='mt-5'>Como fazer consulta de combustiveis?</h3>
             <table className="table table-sm">
               <thead>
                 <tr>
@@ -307,7 +307,7 @@ function documentacao() {
                   </th>
                 </tr>
                 <tr>
-                  <th>http://localhost/github/ApiCarros/api/v1/fuels</th>
+                  <th>https://gustavosachettoapi.000webhostapp.com/api/v1/fuels</th>
                 </tr>
               </tbody>
             </table>
@@ -327,7 +327,7 @@ function documentacao() {
                   </th>
                 </tr>
                 <tr>
-                  <th>http://localhost/github/ApiCarros/api/v1/fuels/2</th>
+                  <th>https://gustavosachettoapi.000webhostapp.com/api/v1/fuels/2</th>
                 </tr>
               </tbody>
             </table>

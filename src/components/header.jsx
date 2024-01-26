@@ -6,8 +6,8 @@ import { useEffect } from 'react'
 
 function Header() {
     useEffect(() => {
-        ScrollReveal().reveal('.container', {
-          delay: 100,
+        ScrollReveal().reveal('.nav', {
+          delay: 50,
           rotate:{
             x:10,
             y:10,
@@ -18,7 +18,7 @@ function Header() {
     return (
       <>
         <header>
-            <nav className="navbar navbar-expand-lg navbar-light">
+            <nav className="navbar navbar-expand-lg navbar-light nav">
                 <div className="container">
                     <a className="navbar-brand mx-2 text-effect title-nav" href="/" >APICarros</a>
                     <div className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
