@@ -10,7 +10,9 @@ function CodeToggle({ codeId, children }) {
       </button>
       {isVisible && (
         <code id={codeId}>
-          {children}
+          <pre>
+            {children}
+          </pre>
         </code>
       )}
     </div>

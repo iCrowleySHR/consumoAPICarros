@@ -352,9 +352,7 @@ function documentacao() {
           </div>
           <label>Exemplo do arquivo JSON:</label>
             <CodeToggle codeId="code1" >
-              <pre>
                 <div className='text-start'>{JSON.stringify(combustivel, null, 2)}</div>
-              </pre>
             </CodeToggle>
         </article>
       </section>
