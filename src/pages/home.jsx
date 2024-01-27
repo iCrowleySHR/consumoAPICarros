@@ -3,6 +3,7 @@ import Footer from '../components/footer'
 import '../styles/home.css'
 import ScrollReveal from 'scrollreveal'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 function Home() {
 
   useEffect(() => {
@@ -83,7 +84,7 @@ function Home() {
             <section className='text-center py-4 mt-5 documentation'>
               <h1>Documentação</h1>
               <p>
-                Confira toda a documentação do projeto clicando <a href="/documentacao">AQUI!</a>
+                Confira toda a documentação do projeto clicando <Link to="/documentacao">AQUI!</Link>
               </p>
               <img src="https://cdn.dribbble.com/users/1708816/screenshots/15637256/media/f9826f0af8a49462f048262a8502035b.gif" alt="gif image"/>
             </section>

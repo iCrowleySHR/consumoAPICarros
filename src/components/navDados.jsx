@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 import '../styles/navDados.css'
+import { Link } from 'react-router-dom'
 
 function NavDados() {
     return (
@@ -10,16 +11,16 @@ function NavDados() {
                     <div className="collapse navbar-collapse justify-content-center" >
                         <ul className="navbar-nav text-center">
                             <li className="nav-item">
-                                <a className="nav-link text-nav" href="/adicionar-combustivel">Adicionar Combustível</a>
+                                <Link className="nav-link text-nav" href="/adicionar-combustivel">Adicionar Combustível</Link>
                             </li>
                             <li className="nav-item ">
-                                <a className="nav-link text-nav" href="/adicionar-transmissao">Adicionar Trasmissão</a>
+                                <Link className="nav-link text-nav" href="/adicionar-transmissao">Adicionar Trasmissão</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-nav" href="/adicionar-marca">Adicionar Marca</a>
+                                <Link className="nav-link text-nav" href="/adicionar-marca">Adicionar Marca</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-nav" href="/adicionar-modelo">Adicionar Modelo</a>
+                                <Link className="nav-link text-nav" href="/adicionar-modelo">Adicionar Modelo</Link>
                             </li>
                         </ul>
                     </div>

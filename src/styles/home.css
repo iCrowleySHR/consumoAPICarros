@@ -29,10 +29,11 @@ marquee {
     background-color: var(--gray);
 }
 
-.documentation>img {
+.documentation > img {
     border-radius: 13px;
     box-shadow: var(--boxShadow);
     max-width: 450px;
+    width: 100%;
 }
 
 @media screen and (max-width:768px) {

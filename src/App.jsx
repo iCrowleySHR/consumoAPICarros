@@ -13,14 +13,14 @@ function App() {
     <>      
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Home/>}  exact/>
           <Route path="/adicionar" element={<AdicionarVeiculo/>} />
           <Route path="/documentacao" element={<Documentacao/>} />
           <Route path="/adicionar-combustivel" element={<AdicionarCombustivel/>} />
           <Route path="/adicionar-marca" element={<AdicionarMarca/>} />
           <Route path="/adicionar-transmissao" element={<AdicionarTransmissao/>} />
           <Route path="/adicionar-modelo" element={<AdicionarModelo/>} />
-          <Route path="*" element={<Error404 />} />
+          <Route path="*" element={<Error404 />} exact/>
         </Routes>
       </BrowserRouter>
     </>
