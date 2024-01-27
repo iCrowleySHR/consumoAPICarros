@@ -134,11 +134,11 @@ function documentacao() {
               </table>
               </div>
               <label>Exemplo do arquivo JSON:</label>
-              <pre>
                 <CodeToggle codeId="code1">
-                  <div className='text-start'>{JSON.stringify(carro, null, 2)}</div>
+                  <pre>
+                    <div className='text-start'>{JSON.stringify(carro, null, 2)}</div>
+                  </pre>
                 </CodeToggle>
-              </pre>
           </article>
         </section>
 
@@ -188,11 +188,11 @@ function documentacao() {
             </table>
           </div>
           <label>Exemplo do arquivo JSON:</label>
-          <pre>
             <CodeToggle codeId="code1">
-              <div className='text-start'>{JSON.stringify(transmissao, null, 2)}</div>
+              <pre>
+                <div className='text-start'>{JSON.stringify(transmissao, null, 2)}</div>
+              </pre>
             </CodeToggle>
-          </pre>
         </article>
       </section>
 
@@ -243,11 +243,11 @@ function documentacao() {
             </table>
           </div>
           <label>Exemplo do arquivo JSON:</label>
-          <pre>
             <CodeToggle codeId="code1">
-              <div className='text-start'>{JSON.stringify(marca, null, 2)}</div>
+              <pre>
+                <div className='text-start'>{JSON.stringify(marca, null, 2)}</div>
+              </pre>
             </CodeToggle>
-          </pre>
         </article>
       </section>
 
@@ -297,11 +297,11 @@ function documentacao() {
             </table>
           </div>
           <label>Exemplo do arquivo JSON:</label>
-          <pre>
             <CodeToggle codeId="code1" >
-              <div className='text-start'>{JSON.stringify(modelo, null, 2)}</div>
+              <pre>
+                <div className='text-start'>{JSON.stringify(modelo, null, 2)}</div>
+              </pre>
             </CodeToggle>
-          </pre>
         </article>
       </section>
 
@@ -351,11 +351,11 @@ function documentacao() {
             </table>
           </div>
           <label>Exemplo do arquivo JSON:</label>
-          <pre>
             <CodeToggle codeId="code1" >
-              <div className='text-start'>{JSON.stringify(combustivel, null, 2)}</div>
+              <pre>
+                <div className='text-start'>{JSON.stringify(combustivel, null, 2)}</div>
+              </pre>
             </CodeToggle>
-          </pre>
         </article>
       </section>
     </main >
