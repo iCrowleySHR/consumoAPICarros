@@ -12,11 +12,11 @@ function documentacao() {
   useEffect(() => {
     ScrollReveal().reveal('.container', {
       delay: 100,
-      rotate:{
-        x:0,
-        y:10,
-        z:10
-    }
+      rotate: {
+        x: 0,
+        y: 10,
+        z: 10
+      }
     });
   }, []);
 
@@ -68,78 +68,84 @@ function documentacao() {
         <section className='section-documentacao '>
           <article>
             <h3 className='mt-5'>Como fazer consulta de veículos?</h3>
-            <table className="table">
-              <thead>
-                <tr>
-                  <th scope="col" className="table-light">GET</th>
-                </tr>
-              </thead>
-              <tbody className="table-group-divider">
-                <tr>
-                  <th>
-                    <p>
-                      Realize uma requisição para esta URL para obter a lista de veículos disponíveis.
-                    </p>
-                  </th>
-                </tr>
-                <tr>
-                  <th>https://gustavosachettoapi.000webhostapp.com/api/v1/cars</th>
-                </tr>
-              </tbody>
-            </table>
+            <div className="table-responsive text-start">
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th scope="col" className="table-light">GET</th>
+                  </tr>
+                </thead>
+                <tbody className="table-group-divider">
+                  <tr>
+                    <th>
+                      <p>
+                        Realize uma requisição para esta URL para obter a lista de veículos disponíveis.
+                      </p>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>https://gustavosachettoapi.000webhostapp.com/api/v1/cars</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-            <table className="table table-sm">
-              <thead>
-                <tr>
-                  <th scope="col" className="table-light">GET</th>
-                </tr>
-              </thead>
-              <tbody className="table-group-divider">
-                <tr>
-                  <th>
-                    <p>
-                      Utilize o parâmetro <b>page</b> para navegar pelas diferentes páginas da lista de veículos.
-                    </p>
-                  </th>
-                </tr>
-                <tr>
-                  <th>https://gustavosachettoapi.000webhostapp.com/api/v1/cars?page=7</th>
-                </tr>
-              </tbody>
-            </table>
-            
+            <div className="table-responsive text-start">
+              <table className="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col" className="table-light">GET</th>
+                  </tr>
+                </thead>
+                <tbody className="table-group-divider">
+                  <tr>
+                    <th>
+                      <p>
+                        Utilize o parâmetro <b>page</b> para navegar pelas diferentes páginas da lista de veículos.
+                      </p>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>https://gustavosachettoapi.000webhostapp.com/api/v1/cars?page=7</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-            <table className="table table-sm">
-              <thead>
-                <tr>
-                  <th scope="col" className="table-light">GET</th>
-                </tr>
-              </thead>
-              <tbody className="table-group-divider">
-                <tr>
-                  <th>
-                    <p>
-                      Insira o ID do veículo após a barra para obter informações específicas sobre um veículo.
-                    </p>
-                  </th>
-                </tr>
-                <tr>
-                  <th>https://gustavosachettoapi.000webhostapp.com/api/v1/cars/2</th>
-                </tr>
-              </tbody>
-            </table>
-            <label>Exemplo do arquivo JSON:</label>
-            <pre>
-              <CodeToggle codeId="code1">
-                <div readonly>{JSON.stringify(carro, null, 2)}</div>
-              </CodeToggle>
-            </pre>
+            <div className="table-responsive text-start">
+              <table className="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col" className="table-light">GET</th>
+                  </tr>
+                </thead>
+                <tbody className="table-group-divider">
+                  <tr>
+                    <th>
+                      <p>
+                        Insira o ID do veículo após a barra para obter informações específicas sobre um veículo.
+                      </p>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>https://gustavosachettoapi.000webhostapp.com/api/v1/cars/2</th>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+              <label>Exemplo do arquivo JSON:</label>
+              <pre>
+                <CodeToggle codeId="code1">
+                  <div readonly>{JSON.stringify(carro, null, 2)}</div>
+                </CodeToggle>
+              </pre>
           </article>
         </section>
 
-        <section>
-          <article>
-            <h3 className='mt-5'>Como fazer consulta de transmissões?</h3>
+      <section>
+        <article>
+          <h3 className='mt-5'>Como fazer consulta de transmissões?</h3>
+          <div className="table-responsive text-start">
             <table className="table table-sm">
               <thead>
                 <tr>
@@ -159,7 +165,8 @@ function documentacao() {
                 </tr>
               </tbody>
             </table>
-
+          </div>
+          <div className="table-responsive text-start">
             <table class="table table-sm">
               <thead>
                 <tr>
@@ -179,18 +186,20 @@ function documentacao() {
                 </tr>
               </tbody>
             </table>
-            <label>Exemplo do arquivo JSON:</label>
-            <pre>
-              <CodeToggle codeId="code1">
-                <div readonly>{JSON.stringify(transmissao, null, 2)}</div>
-              </CodeToggle>
-            </pre>
-          </article>
-        </section>
+          </div>
+          <label>Exemplo do arquivo JSON:</label>
+          <pre>
+            <CodeToggle codeId="code1">
+              <div readonly>{JSON.stringify(transmissao, null, 2)}</div>
+            </CodeToggle>
+          </pre>
+        </article>
+      </section>
 
-        <section>
-          <article>
-            <h3 className='mt-5'>Como fazer consulta de marcas?</h3>
+      <section>
+        <article>
+          <h3 className='mt-5'>Como fazer consulta de marcas?</h3>
+          <div className="table-responsive text-start">
             <table className="table table-sm">
               <thead>
                 <tr>
@@ -210,7 +219,9 @@ function documentacao() {
                 </tr>
               </tbody>
             </table>
+          </div>
 
+          <div className="table-responsive text-start">
             <table className="table table-sm">
               <thead>
                 <tr>
@@ -230,18 +241,20 @@ function documentacao() {
                 </tr>
               </tbody>
             </table>
-            <label>Exemplo do arquivo JSON:</label>
-            <pre>
-              <CodeToggle codeId="code1">
-                <div readonly>{JSON.stringify(marca, null, 2)}</div>
-              </CodeToggle>
-            </pre>
-          </article>
-        </section>
+          </div>
+          <label>Exemplo do arquivo JSON:</label>
+          <pre>
+            <CodeToggle codeId="code1">
+              <div readonly>{JSON.stringify(marca, null, 2)}</div>
+            </CodeToggle>
+          </pre>
+        </article>
+      </section>
 
-        <section>
-          <article>
-            <h3 className='mt-5'>Como fazer consulta de modelos?</h3>
+      <section>
+        <article>
+          <h3 className='mt-5'>Como fazer consulta de modelos?</h3>
+          <div className="table-responsive text-start">
             <table className="table table-sm">
               <thead>
                 <tr>
@@ -261,7 +274,8 @@ function documentacao() {
                 </tr>
               </tbody>
             </table>
-
+          </div>
+          <div className="table-responsive text-start">
             <table className="table table-sm">
               <thead>
                 <tr>
@@ -281,18 +295,20 @@ function documentacao() {
                 </tr>
               </tbody>
             </table>
-            <label>Exemplo do arquivo JSON:</label>
-            <pre>
-              <CodeToggle codeId="code1" >
-                <div readonly>{JSON.stringify(modelo, null, 2)}</div>
-              </CodeToggle>
-            </pre>
-          </article>
-        </section>
+          </div>
+          <label>Exemplo do arquivo JSON:</label>
+          <pre>
+            <CodeToggle codeId="code1" >
+              <div readonly>{JSON.stringify(modelo, null, 2)}</div>
+            </CodeToggle>
+          </pre>
+        </article>
+      </section>
 
-        <section>
-          <article>
-            <h3 className='mt-5'>Como fazer consulta de combustiveis?</h3>
+      <section>
+        <article>
+          <h3 className='mt-5'>Como fazer consulta de combustiveis?</h3>
+          <div className="table-responsive text-start">
             <table className="table table-sm">
               <thead>
                 <tr>
@@ -312,7 +328,8 @@ function documentacao() {
                 </tr>
               </tbody>
             </table>
-
+          </div>
+          <div className="table-responsive text-start">
             <table className="table table-sm">
               <thead>
                 <tr>
@@ -332,15 +349,16 @@ function documentacao() {
                 </tr>
               </tbody>
             </table>
-            <label>Exemplo do arquivo JSON:</label>
-            <pre>
-              <CodeToggle codeId="code1" >
-                <div readonly>{JSON.stringify(combustivel, null, 2)}</div>
-              </CodeToggle>
-            </pre>
-          </article>
-        </section>
-      </main>
+          </div>
+          <label>Exemplo do arquivo JSON:</label>
+          <pre>
+            <CodeToggle codeId="code1" >
+              <div readonly>{JSON.stringify(combustivel, null, 2)}</div>
+            </CodeToggle>
+          </pre>
+        </article>
+      </section>
+    </main >
       <Footer />
     </>
   )
