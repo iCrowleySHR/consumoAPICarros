@@ -136,7 +136,7 @@ function documentacao() {
               <label>Exemplo do arquivo JSON:</label>
               <pre>
                 <CodeToggle codeId="code1">
-                  <div readonly>{JSON.stringify(carro, null, 2)}</div>
+                  <div className='text-start'>{JSON.stringify(carro, null, 2)}</div>
                 </CodeToggle>
               </pre>
           </article>
@@ -167,7 +167,7 @@ function documentacao() {
             </table>
           </div>
           <div className="table-responsive text-start">
-            <table class="table table-sm">
+            <table className="table table-sm">
               <thead>
                 <tr>
                   <th scope="col" className="table-light">GET</th>
@@ -190,7 +190,7 @@ function documentacao() {
           <label>Exemplo do arquivo JSON:</label>
           <pre>
             <CodeToggle codeId="code1">
-              <div readonly>{JSON.stringify(transmissao, null, 2)}</div>
+              <div className='text-start'>{JSON.stringify(transmissao, null, 2)}</div>
             </CodeToggle>
           </pre>
         </article>
@@ -245,7 +245,7 @@ function documentacao() {
           <label>Exemplo do arquivo JSON:</label>
           <pre>
             <CodeToggle codeId="code1">
-              <div readonly>{JSON.stringify(marca, null, 2)}</div>
+              <div className='text-start'>{JSON.stringify(marca, null, 2)}</div>
             </CodeToggle>
           </pre>
         </article>
@@ -299,7 +299,7 @@ function documentacao() {
           <label>Exemplo do arquivo JSON:</label>
           <pre>
             <CodeToggle codeId="code1" >
-              <div readonly>{JSON.stringify(modelo, null, 2)}</div>
+              <div className='text-start'>{JSON.stringify(modelo, null, 2)}</div>
             </CodeToggle>
           </pre>
         </article>
@@ -353,7 +353,7 @@ function documentacao() {
           <label>Exemplo do arquivo JSON:</label>
           <pre>
             <CodeToggle codeId="code1" >
-              <div readonly>{JSON.stringify(combustivel, null, 2)}</div>
+              <div className='text-start'>{JSON.stringify(combustivel, null, 2)}</div>
             </CodeToggle>
           </pre>
         </article>

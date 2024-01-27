@@ -87,7 +87,7 @@ function addTransmissao() {
                     <button type='submit' className='btn btn-primary btn-lg my-2'>Enviar dados</button>
                 </form>
             </main>
-            <Footer />
+            <Footer/>
         </>
     )
 }
