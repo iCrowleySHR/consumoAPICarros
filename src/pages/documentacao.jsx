@@ -59,7 +59,7 @@ function documentacao() {
   return (
     <>
       <Header />
-      <main className='container main-documentacao pt-3'>
+      <main className='container main-documentacao pt-3 table-responsive'>
         <section>
           <h1 className='text-effect'>Documentação</h1>
           <p>Acompanhe aqui toda a documentação do projeto, e como integrar esse sistema na sua aplicação!</p>
@@ -107,6 +107,7 @@ function documentacao() {
                 </tr>
               </tbody>
             </table>
+            
 
             <table className="table table-sm">
               <thead>
