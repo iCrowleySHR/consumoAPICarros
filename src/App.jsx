@@ -20,7 +20,7 @@ function App() {
           <Route path="/adicionar-marca" element={<AdicionarMarca/>} />
           <Route path="/adicionar-transmissao" element={<AdicionarTransmissao/>} />
           <Route path="/adicionar-modelo" element={<AdicionarModelo/>} />
-          <Route path="*" element={<Error404 />} exact/>
+          <Route path="*" element={<Error404 />}/>
         </Routes>
       </BrowserRouter>
     </>

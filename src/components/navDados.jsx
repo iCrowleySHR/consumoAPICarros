@@ -11,16 +11,16 @@ function NavDados() {
                     <div className="collapse navbar-collapse justify-content-center" >
                         <ul className="navbar-nav text-center">
                             <li className="nav-item">
-                                <Link className="nav-link text-nav" href="/adicionar-combustivel">Adicionar Combustível</Link>
+                                <Link className="nav-link text-nav" to="/adicionar-combustivel">Adicionar Combustível</Link>
                             </li>
                             <li className="nav-item ">
-                                <Link className="nav-link text-nav" href="/adicionar-transmissao">Adicionar Trasmissão</Link>
+                                <Link className="nav-link text-nav" to="/adicionar-transmissao">Adicionar Trasmissão</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link text-nav" href="/adicionar-marca">Adicionar Marca</Link>
+                                <Link className="nav-link text-nav" to="/adicionar-marca">Adicionar Marca</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link text-nav" href="/adicionar-modelo">Adicionar Modelo</Link>
+                                <Link className="nav-link text-nav" to="/adicionar-modelo">Adicionar Modelo</Link>
                             </li>
                         </ul>
                     </div>
