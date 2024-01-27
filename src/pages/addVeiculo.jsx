@@ -9,7 +9,7 @@ import ScrollReveal from 'scrollreveal';
 
 
 function addVeiculo() {
-    
+
     const [combustiveis, setCombustiveis] = useState([]);
     useEffect(() => {
         fetchCombustiveis().then(dadosAPI => {
@@ -74,47 +74,54 @@ function addVeiculo() {
     const EnviandoSubmit = (e) => {
         e.preventDefault();
         submitVeiculo(dados)
-        .then(resultado => {
-            if (resultado === true) {
-                Swal.fire({
-                    title: 'Enviado com succeso!',
-                    text: 'Os dados inseridos foi implementado no nosso banco',
-                    icon: 'success',
-                    confirmButtonText: 'Ok'
-                })
-                setDados((prevDados) => ({
-                    ...prevDados,
-                    transmissao: ''
-                }));
-            }else{
+            .then(resultado => {
+                if (resultado === true) {
+                    Swal.fire({
+                        title: 'Enviado com succeso!',
+                        text: 'Os dados inseridos foi implementado no nosso banco',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+                    setDados((prevDados) => ({
+                        ...prevDados,
+                        transmissao: ''
+                    }));
+                } else {
+                    Swal.fire({
+                        title: 'Parece que ocorreu algum erro!',
+                        text: 'Tente mais tarde :(',
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                    })
+                }
+            })
+            .catch(erro => {
+                console.error(erro);
                 Swal.fire({
                     title: 'Parece que ocorreu algum erro!',
+                    text: 'Tente mais tarde :(',
                     icon: 'error',
                     confirmButtonText: 'Ok'
                 })
-            }
-        })
-        .catch(erro => {
-            console.error(erro);
-        });
+            });
     };
 
 
     return (
         <>
             <Header />
-            <NavDados/>
+            <NavDados />
             <main className='container pt-3 mb-5 main-adicionar'>
                 <h1 className='text-center'>Adicionar dados para a API Carros!</h1>
                 <p className='text-center'>Caso queira adicionar algum veículo para o nosso banco de dados, fique a vontade para preencher o formulário!😁😀</p>
                 <form onSubmit={EnviandoSubmit} className='mt-2 form'>
 
                     <label htmlFor="modelo">Adicione o modelo do veiculo:</label>
-                    <select 
-                    className='form-select' 
-                    onChange={handleChange} 
-                    value={dados.modelo}
-                    id='modelo'>
+                    <select
+                        className='form-select'
+                        onChange={handleChange}
+                        value={dados.modelo}
+                        id='modelo'>
 
                         {modelo.map(dados => (
                             <option value={dados.id} key={dados.id} >
@@ -142,11 +149,11 @@ function addVeiculo() {
                     />
 
                     <label htmlFor="transmissao">Adicione a transmissão do carro:</label>
-                    <select 
-                    className='form-select' 
-                    onChange={handleChange} 
-                    value={dados.transmissao}
-                    id='transmissao'>
+                    <select
+                        className='form-select'
+                        onChange={handleChange}
+                        value={dados.transmissao}
+                        id='transmissao'>
 
                         {transmissao.map(dados => (
                             <option value={dados.id} key={dados.id} >
@@ -183,14 +190,14 @@ function addVeiculo() {
                         value={dados.anoLancamento}
                         onChange={handleChange}
                     />
-                    
+
 
                     <label htmlFor="combustivel">Adicione o tipo de combustivel:</label>
-                    <select 
-                    className='form-select' 
-                    onChange={handleChange} 
-                    value={dados.combustivel}
-                    id='combustivel'>
+                    <select
+                        className='form-select'
+                        onChange={handleChange}
+                        value={dados.combustivel}
+                        id='combustivel'>
 
                         {combustiveis.map(dados => (
                             <option value={dados.id} key={dados.id} >

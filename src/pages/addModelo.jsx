@@ -38,6 +38,7 @@ function addTransmissao() {
         e.preventDefault();
         submitModelo(dados)
             .then(resultado => {
+                console.log(resultado)
                 if (resultado === true) {
                     Swal.fire({
                         title: 'Enviado com succeso!',
@@ -52,6 +53,7 @@ function addTransmissao() {
                 } else {
                     Swal.fire({
                         title: 'Parece que ocorreu algum erro!',
+                        text: 'Tente mais tarde :(',
                         icon: 'error',
                         confirmButtonText: 'Ok'
                     })
@@ -59,6 +61,12 @@ function addTransmissao() {
             })
             .catch(erro => {
                 console.error(erro);
+                Swal.fire({
+                    title: 'Parece que ocorreu algum erro!',
+                    text: 'Tente mais tarde :(',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                })
             });
     };
 
@@ -69,7 +77,7 @@ function addTransmissao() {
             <NavDados />
             <main className='container py-3 mb-5 main-adicionar'>
                 <article className='text-center'>
-                    <h1>Adicione um Modelo!</h1>
+                    <h1>Adicione um modelo!</h1>
                     <p>Abaixo estará todos os modelos que já estão presentes no banco de dados, caso falte algum, adicione!</p>
                 </article>
                 <label>Essas são as tranmissões presentes no nosso banco de dados:</label>

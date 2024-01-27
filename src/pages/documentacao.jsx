@@ -68,7 +68,7 @@ function documentacao() {
         <section className='section-documentacao '>
           <article>
             <h3 className='mt-5'>Como fazer consulta de veículos?</h3>
-            <table className="table table-sm">
+            <table className="table">
               <thead>
                 <tr>
                   <th scope="col" className="table-light">GET</th>

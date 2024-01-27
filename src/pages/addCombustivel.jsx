@@ -31,29 +31,36 @@ function addCombustivel() {
     const EnviandoSubmit = (e) => {
         e.preventDefault();
         submitCombustivel(dados)
-        .then(resultado => {
-            if (resultado === true) {
-                Swal.fire({
-                    title: 'Enviado com succeso!',
-                    text: 'Os dados inseridos foi implementado no nosso banco',
-                    icon: 'success',
-                    confirmButtonText: 'Ok'
-                })
-                setDados((prevDados) => ({
-                    ...prevDados,
-                    combustivel: ''
-                }));
-            }else{
+            .then(resultado => {
+                if (resultado === true) {
+                    Swal.fire({
+                        title: 'Enviado com succeso!',
+                        text: 'Os dados inseridos foi implementado no nosso banco',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+                    setDados((prevDados) => ({
+                        ...prevDados,
+                        combustivel: ''
+                    }));
+                } else {
+                    Swal.fire({
+                        title: 'Parece que ocorreu algum erro!',
+                        text: 'Tente mais tarde :(',
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                    })
+                }
+            })
+            .catch(erro => {
+                console.error(erro);
                 Swal.fire({
                     title: 'Parece que ocorreu algum erro!',
+                    text: 'Tente mais tarde :(',
                     icon: 'error',
                     confirmButtonText: 'Ok'
                 })
-            }
-        })
-        .catch(erro => {
-            console.error(erro);
-        }); 
+            });
     };
 
     return (

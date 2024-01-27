@@ -45,6 +45,7 @@ function addMarca() {
             }else{
                 Swal.fire({
                     title: 'Parece que ocorreu algum erro!',
+                    text:'Tente mais tarde :(',
                     icon: 'error',
                     confirmButtonText: 'Ok'
                 })
@@ -52,6 +53,12 @@ function addMarca() {
         })
         .catch(erro => {
             console.error(erro);
+            Swal.fire({
+                title: 'Parece que ocorreu algum erro!',
+                text:'Tente mais tarde :(',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            })
         });  
     };
 
