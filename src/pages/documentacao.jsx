@@ -10,14 +10,16 @@ import ScrollReveal from 'scrollreveal'
 
 function documentacao() {
   useEffect(() => {
-    ScrollReveal().reveal('.container', {
-      delay: 100,
-      rotate: {
-        x: 0,
-        y: 10,
-        z: 10
-      }
-    });
+    if (window.innerWidth > 768) {
+      ScrollReveal().reveal('.main-documentacao', {
+        duration: 1000,
+        rotate: {
+          x: 0,
+          y: 10,
+          z: 10
+        }
+      });
+    }
   }, []);
 
   const [carro, setCarro] = useState([]);
@@ -59,7 +61,7 @@ function documentacao() {
   return (
     <>
       <Header />
-      <main className='container main-documentacao pt-3 table-responsive'>
+      <main className='container main-documentacao pt-3'>
         <section>
           <h1 className='text-effect'>Documentação</h1>
           <p>Acompanhe aqui toda a documentação do projeto, e como integrar esse sistema na sua aplicação!</p>
@@ -134,11 +136,11 @@ function documentacao() {
               </table>
               </div>
               <label>Exemplo do arquivo JSON:</label>
-                <CodeToggle codeId="code1">
-                  <pre>
+              <pre className='container'>
+                <CodeToggle codeId="code1">                 
                     <div className='text-start'>{JSON.stringify(carro, null, 2)}</div>
-                  </pre>
                 </CodeToggle>
+              </pre>
           </article>
         </section>
 
@@ -188,11 +190,11 @@ function documentacao() {
             </table>
           </div>
           <label>Exemplo do arquivo JSON:</label>
-            <CodeToggle codeId="code1">
-              <pre>
+          <pre className='container'>
+            <CodeToggle codeId="code1">             
                 <div className='text-start'>{JSON.stringify(transmissao, null, 2)}</div>
-              </pre>
             </CodeToggle>
+          </pre>
         </article>
       </section>
 
@@ -243,11 +245,11 @@ function documentacao() {
             </table>
           </div>
           <label>Exemplo do arquivo JSON:</label>
+          <pre className='container'>
             <CodeToggle codeId="code1">
-              <pre>
                 <div className='text-start'>{JSON.stringify(marca, null, 2)}</div>
-              </pre>
             </CodeToggle>
+          </pre>
         </article>
       </section>
 
@@ -297,11 +299,11 @@ function documentacao() {
             </table>
           </div>
           <label>Exemplo do arquivo JSON:</label>
+          <pre className='container'> 
             <CodeToggle codeId="code1" >
-              <pre>
                 <div className='text-start'>{JSON.stringify(modelo, null, 2)}</div>
-              </pre>
             </CodeToggle>
+          </pre>
         </article>
       </section>
 
@@ -351,9 +353,11 @@ function documentacao() {
             </table>
           </div>
           <label>Exemplo do arquivo JSON:</label>
-            <CodeToggle codeId="code1" >
-                <div className='text-start'>{JSON.stringify(combustivel, null, 2)}</div>
-            </CodeToggle>
+          <pre className='container'>
+              <CodeToggle codeId="code1" >
+                  <div className='text-start'>{JSON.stringify(combustivel, null, 2)}</div>
+              </CodeToggle>
+          </pre>
         </article>
       </section>
     </main >
