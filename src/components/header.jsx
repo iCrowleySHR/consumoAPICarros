@@ -32,7 +32,7 @@ function Header() {
                         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                             <ul className="navbar-nav">
                                 <li className="nav-item mx-3">
-                                    <Link className="nav-link" to="/adicionar">Adicionar dados</Link>
+                                    <Link className="nav-link text-danger" to="/">Adicionar dados (Indisponível, API fora do ar)</Link>
                                 </li>
                                 <li className="nav-item mx-3">
                                     <Link className="nav-link" to="/documentacao">Documentação</Link>

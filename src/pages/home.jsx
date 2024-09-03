@@ -48,7 +48,10 @@ function Home() {
           <h1>Bem vindo(a) ao
             <span className='text-effect'> APICarros</span>.
           </h1>
-          <p>Venha! Adicione carros e inclua a nossa API no seu site! Nela você descobrirá todas as informações que um carro pode ter!</p>
+          <p>
+            Venha! Adicione carros e inclua a nossa API no seu site! Nela você descobrirá todas as informações que um carro pode ter!
+          <div className="text-danger">API fora do ar!</div>
+          </p>
           <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1fcd7937-324c-4714-9aae-04e3e5d404df/dgcvnee-ca89d39c-6b92-484d-8011-bb57e26e6322.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzFmY2Q3OTM3LTMyNGMtNDcxNC05YWFlLTA0ZTNlNWQ0MDRkZlwvZGdjdm5lZS1jYTg5ZDM5Yy02YjkyLTQ4NGQtODAxMS1iYjU3ZTI2ZTYzMjIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.gobrfXRh3q8e9sVZDtYFNwINT0pq4HXKs9l1P-tcGwY" alt="image car" />
         </section>
 

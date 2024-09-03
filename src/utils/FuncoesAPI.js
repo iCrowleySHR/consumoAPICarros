@@ -1,4 +1,4 @@
-let linkBase = 'https://gustavosachettoapi.000webhostapp.com'
+let linkBase = ''
 /*PEGAR DADOS SOBRE AS MARCAS NA API*/
 export const fetchMarcas = () => {
   return fetch(`${linkBase}/api/v1/brands`)
